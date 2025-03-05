@@ -38,5 +38,6 @@ jobs:
 
       # Run Newman test
       - name: Running first collection
+        run: DummyJSON_API.postman_collection.json
       
           
