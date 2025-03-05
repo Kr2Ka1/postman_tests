@@ -1,0 +1,2710 @@
+{
+	"info": {
+		"_postman_id": "0e8306c9-153c-4ef7-8831-32388362ee93",
+		"name": "DummyJSON_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41089263"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "LoginAutomatic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"// // pm.test(\"Save tokens to environment\", function () {\r",
+									"// //     const jsonData = pm.response.json();\r",
+									"// //     pm.environment.set(\"AccessToken\", jsonData.accessToken);\r",
+									"// //     pm.environment.set(\"RefreshToken\", jsonData.refreshToken);\r",
+									"// // });\r",
+									"// //globalus kintamasis\r",
+									"// console.log(pm.globals.get('globalus_kintamasis'));\r",
+									"// // pm.global.set('kintamojo_pavadinimas', 'kitamojo_reiksme')\r",
+									"// // environment\r",
+									"// console.log(pm.environment.get(\"AccessToken\"));\r",
+									"\r",
+									"// //collection\r",
+									"// console.log(pm.collectionVariables.get('kolekcijos_kintamasis'));\r",
+									"// pm.collectionVariables.set('script_kolekcija', 'test');\r",
+									"\r",
+									"\r",
+									"// //lokal variable(lokalus kintamasis) - yra kintamasis, kuris yra request scripte.\r",
+									"// //egzistuoja tik tol kol pasibaigia request.\r",
+									"// pm.variables.set('lokalus_kintamasis', 'laikinas');\r",
+									"// console.log(pm.variables.get('lokalus_kintamasis'));\r",
+									"\r",
+									"// let laikinas = 'test';//matomas tik 6itame skripte\r",
+									"\r",
+									"\r",
+									"// //kintamieji - išvesti(gauti/get), nustatyti(set), sukurti(set)\r",
+									"\r",
+									"\r",
+									"\r",
+									"// pm.globals.get('globalus_kintamasis');\r",
+									"\r",
+									"// let jsonAtsakymas = pm.response.json();\r",
+									"\r",
+									"// pm.environment.set('accessToken', jsonAtsakymas.accessToken);\r",
+									"// pm.environment.set('refreshToken', jsonAtsakymas.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// pm.variables.set('expiration_time', '40');\r",
+									"// pm.variables.set('username', 'emilys');\r",
+									"// pm.variables.set( 'password', 'emilyspass');\r",
+									"// // console.log(pm.variables.get('expiration_time'));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"username\": \"{{username}}\",\r\n   \"password\": \"{{password}}\",\r\n    \"credentials\": \"include\"\r\n    // \"expiresInMins\": \"{{expiration_time}}\" //optional, defoults to 60\r\n  }\r\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "'emilys'",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "'emilyspass'",
+									"disabled": true
+								},
+								{
+									"key": "credentials",
+									"value": "'include'",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginOneTest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"// // pm.test(\"Save tokens to environment\", function () {\r",
+									"// //     const jsonData = pm.response.json();\r",
+									"// //     pm.environment.set(\"AccessToken\", jsonData.accessToken);\r",
+									"// //     pm.environment.set(\"RefreshToken\", jsonData.refreshToken);\r",
+									"// // });\r",
+									"// //globalus kintamasis\r",
+									"// console.log(pm.globals.get('globalus_kintamasis'));\r",
+									"// // pm.global.set('kintamojo_pavadinimas', 'kitamojo_reiksme')\r",
+									"// // environment\r",
+									"// console.log(pm.environment.get(\"AccessToken\"));\r",
+									"\r",
+									"// //collection\r",
+									"// console.log(pm.collectionVariables.get('kolekcijos_kintamasis'));\r",
+									"// pm.collectionVariables.set('script_kolekcija', 'test');\r",
+									"\r",
+									"\r",
+									"// //lokal variable(lokalus kintamasis) - yra kintamasis, kuris yra request scripte.\r",
+									"// //egzistuoja tik tol kol pasibaigia request.\r",
+									"// pm.variables.set('lokalus_kintamasis', 'laikinas');\r",
+									"// console.log(pm.variables.get('lokalus_kintamasis'));\r",
+									"\r",
+									"// let laikinas = 'test';//matomas tik 6itame skripte\r",
+									"\r",
+									"\r",
+									"// //kintamieji - išvesti(gauti/get), nustatyti(set), sukurti(set)\r",
+									"\r",
+									"\r",
+									"\r",
+									"// pm.globals.get('globalus_kintamasis');\r",
+									"\r",
+									"// let jsonAtsakymas = pm.response.json();\r",
+									"\r",
+									"// pm.environment.set('accessToken', jsonAtsakymas.accessToken);\r",
+									"// pm.environment.set('refreshToken', jsonAtsakymas.refreshToken);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"// pm.variables.set('expiration_time', '40');\r",
+									"// pm.variables.set('username', 'emilys');\r",
+									"// pm.variables.set( 'password', 'emilyspass');\r",
+									"// // console.log(pm.variables.get('expiration_time'));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"username\": \"{{username}}\",\r\n   \"password\": \"{{password}}\",\r\n    \"credentials\": \"include\"\r\n    // \"expiresInMins\": \"{{expiration_time}}\" //optional, defoults to 60\r\n  }\r\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "'emilys'",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "'emilyspass'",
+									"disabled": true
+								},
+								{
+									"key": "credentials",
+									"value": "'include'",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCurrentAuthUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// var responseJSON = pm.response.json();\r",
+									"\r",
+									"// // Test the response body structure and values\r",
+									"// pm.test(\"Response body structure is valid\", function () {\r",
+									"//     pm.expect(responseJSON).to.be.an('object').that.has.all.keys('id', 'firstName', 'lastName', 'maidenName', 'age', 'gender', 'email', 'phone', 'username', 'password', 'birthDate', 'image', 'bloodGroup', 'height', 'weight', 'eyeColor', 'hair', 'ip', 'address', 'macAddress', 'university', 'bank', 'company', 'ein', 'ssn', 'userAgent', 'crypto', 'role');\r",
+									"// });\r",
+									"\r",
+									"// // Fixing the TypeError: Cannot read properties of undefined (reading 'filter')\r",
+									"// pm.test(\"Count comments for postId 46\", function () {\r",
+									"//     var postId = 46;\r",
+									"//     var commentsCount = responseJSON.comments.filter(comment => comment.postId === postId).length;\r",
+									"//     pm.expect(commentsCount).to.be.at.least(0);\r",
+									"// });\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RefresAuthSession",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3Mzc2MTcwMzUsImV4cCI6MTc0MDIwOTAzNX0.0IVA9fyiIBuq9eFIzrVz0YhezK2t6mV1hU0cBLracpU\",\r\n    \"expiresInMins\": 30\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/auth/refresh",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DynamicImage",
+			"item": [
+				{
+					"name": "GenerateAllImage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/image",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateSquareImage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/image/150",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"150"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateCustomSizeImage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/image/200x100",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"200x100"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateImageWithCustomText",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/image/400x200/008080/ffffff?text=Hello+Peter",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"400x200",
+								"008080",
+								"ffffff"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "Hello+Peter"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateImageWithCustomColors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/image/400x200/282828",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"400x200",
+								"282828"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateImageWithDifferentFormats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/image/400x200?type=webp&text=I+am+a+webp+image",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"400x200"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "webp"
+								},
+								{
+									"key": "text",
+									"value": "I+am+a+webp+image"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateImageWithCustomFontFamily",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/image/400x200/282828?fontFamily=pacifico&text=I+am+a+pacifico+font",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"400x200",
+								"282828"
+							],
+							"query": [
+								{
+									"key": "fontFamily",
+									"value": "pacifico"
+								},
+								{
+									"key": "text",
+									"value": "I+am+a+pacifico+font"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateImageWithCustomFontSize",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/image/400x200/008080/ffffff?text=Hello+Peter!&fontSize=16",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"image",
+								"400x200",
+								"008080",
+								"ffffff"
+							],
+							"query": [
+								{
+									"key": "text",
+									"value": "Hello+Peter!"
+								},
+								{
+									"key": "fontSize",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateIdenticon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/icon/abc123/150",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"icon",
+								"abc123",
+								"150"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "GetAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products?limit=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/search?q=phone",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "phone"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LimitAndSkipProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products?limit=10&skip=10&select=title,price",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								},
+								{
+									"key": "select",
+									"value": "title,price"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SortProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products?sortBy=title&order=asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "title"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllProductsCategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductsCategories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/category/smartphones",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"category",
+								"smartphones"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "asc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductsCategoryList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/category-list?limit=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"category-list"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductsByCategory",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"// pm.test(\"Kategorijos produktų kiekis > 0\", function () {\r",
+									"//     let jsonData = pm.response.json();\r",
+									"    \r",
+									"//     // pm.expect(jsonData.category).to.be.an('array'); \r",
+									"//     pm.expect(jsonData.products.length).to.be.above(0);  \r",
+									"// });\r",
+									"// pm.test(\"Status code is 200\", function () {\r",
+									"//     pm.response.to.have.status(200);\r",
+									"// });\r",
+									"\r",
+									"//dėstytojo kodas\r",
+									"pm.test(\"Produktų yra\",function() {\r",
+									"    let jsonData = pm.response.json();\r",
+									"    // console.log(jsonData.products.length);\r",
+									"    console.log(jsonData.total);\r",
+									"    pm.expect(jsonData.total).to.be.above(0);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/category/{{category}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"category",
+								"{{category}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "GetAllCarts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleCart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCartsByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3Mzc2MTc5MjcsImV4cCI6MTczNzYyMTUyN30.iGbi-giPs93E6a8i1dZ8skXxUdFQ3UbSPtsXGRTkEpg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts/user/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"carts",
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewCart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"products\": [\r\n      {\r\n        \"id\": 144,\r\n        \"quantity\": 4\r\n      },\r\n      {\r\n        \"id\": 98,\r\n        \"quantity\": 1\r\n      }\r\n    ]\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/carts/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"carts",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"merge\": true,\r\n    \"products\": [\r\n      {\r\n        \"id\": 1,\r\n        \"quantity\": 1\r\n      }\r\n    ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/carts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recipes",
+			"item": [
+				{
+					"name": "GetAllRecipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/recipes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"recipes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleRecipe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/recipes/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"recipes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchRecipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/recipes/search?q=Margherita",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"recipes",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Margherita"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LimitAndSkipRecipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/recipes?limit=10&skip=10&select=name,image",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"recipes"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								},
+								{
+									"key": "select",
+									"value": "name,image"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SortRecipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/recipes?sortBy=name&order=asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"recipes"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "name"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllRecipesTags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/recipes/tags",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"recipes",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRecipesByTag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/recipes/tag/Pakistani",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"recipes",
+								"tag",
+								"Pakistani"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRecipesByMeal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/recipes/meal-type/snack",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"recipes",
+								"meal-type",
+								"snack"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "GetAllUsers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// pm.test('Vartotojų duomenų failas Jso formatu', function () {\r",
+									"// let usersJson = pm.response.json();\r",
+									"// pm.expect(usersJson()).to.have.property('username');\r",
+									"// pm.expect(usersJson()).to.have.property('password');\r",
+									"// });\r",
+									"// console.log(usersJson); - pti bandžiau rašyti\r",
+									"\r",
+									"// Gautų vartotojų duomenys\r",
+									"let users = pm.response.json().users;\r",
+									"\r",
+									"// Sukuriame tuščią masyvą prisijungimams\r",
+									"let userLogins = users.map(user => ({\r",
+									"    username: user.username,\r",
+									"    password: user.password\r",
+									"}));\r",
+									"\r",
+									"// // Išsaugome duomenis į Postman aplinką kaip \"environment variable\"\r",
+									"// pm.environment.set(\"userLogins\", JSON.stringify(userLogins));\r",
+									"\r",
+									"// // Parodome, kad JSON buvo sugeneruotas sėkmingai\r",
+									"// console.log(\"Generated User Logins:\", JSON.stringify(userLogins));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users?limit=0&select=username,password",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								},
+								{
+									"key": "select",
+									"value": "username,password"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"username\": \"emilys\",\r\n    \"password\": \"emilyspass\"\r\n    \r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCurrentAuthenticatedUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/search?q=John",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "John"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FilterUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/filter?key=hair.color&value=Brown&limit=5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "hair.color"
+								},
+								{
+									"key": "value",
+									"value": "Brown"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "skip",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "select",
+									"value": "firstName",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LimitAndSkipUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users?limit=5&skip=10&select=firstName,age",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								},
+								{
+									"key": "select",
+									"value": "firstName,age"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SortUsersBy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users?sortBy=firstName&order=asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "firstName"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUser'sCartsByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/6/carts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"6",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUser'sPostsByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/5/posts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"5",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUser'sTodosByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/7/todos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"7",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Muhammad\",\r\n    \"lastName\": \"Ovi\",\r\n    \"age\": 250\r\n   \r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\": \"Owais\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lastName\": \"Owais\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "GetAllPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSinglePost",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts/search?q=love",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "love"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LimitAndSkipPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts?limit=10&skip=10&select=title,reactions,userId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								},
+								{
+									"key": "select",
+									"value": "title,reactions,userId"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SortPosts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts?sortBy=title&order=asc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "title"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllPostsTags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts/tags",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostsTagList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts/tag-list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"tag-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPostsByTag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts/tag/life",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"tag",
+								"life"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllPostsByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts/user/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPost'sComments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts/1/comments",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"I am in love with someone.\",\r\n    \"userId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/posts/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePost",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"I think I should shift to the moon\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/posts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePost",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"I think I should shift to the moon\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/posts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePost",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "GetAllComments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// pm.test(\"Patikrinti komentarų kiekį Post, kurio id = 46\", function () {\r",
+									"//     let jsonResponse = pm.response.json(); // Gautas atsakas kaip JSON\r",
+									"    \r",
+									"//     // Patikrina, ar 'comments' egzistuoja atsakyme\r",
+									"//     pm.expect(jsonResponse).to.have.property('comments');\r",
+									"    \r",
+									"//     let commentsForPost46 = jsonResponse.comments.filter(function(comment) {\r",
+									"//         return comment.postId === 46;\r",
+									"//     });\r",
+									" \r",
+									"//     pm.expect(commentsForPost46.length).to.be.above(0); // Patikrina, ar yra bent vienas komentaras\r",
+									"//     console.log(\"Komentarų skaičius Post su id = 46: \" + commentsForPost46.length); // Išveda komentarų kiekį į konsolę\r",
+									"// });\r",
+									" \r",
+									"\r",
+									"// {\r",
+									"//     \"comments\": [\r",
+									"//         {\r",
+									"//             \"id\": 1,\r",
+									"//             \"body\": \"This is some awesome thinking!\",\r",
+									"//             \"postId\": 242,\r",
+									"//             \"likes\": 3,\r",
+									"//             \"user\": {\r",
+									"//                 \"id\": 105,\r",
+									"//                 \"username\": \"emmac\",\r",
+									"//                 \"fullName\": \"Emma Wilson\"\r",
+									"//             }\r",
+									"//         }\r",
+									" \r",
+									"//sąraše yra 340 elementų, kiekvienas elemetas turi parametrą portID. Post Id parametras reiškia, kad tas kometaras priklauso tam postui. Surasti tuos elemetus, kuriu postID - 46.\r",
+									"\r",
+									"//algoritmas\r",
+									"// 1. gauti visus 340 elementus\r",
+									"//  2. pasidėti juos į masyvą\r",
+									"// 3. susikurti laikinąjį kintamąjį\r",
+									"// 4. su ciklu ir if pagalba į laikiai kitamąjį atrinkti masyvo elemetus, kurio ir  = 46.\r",
+									"// 5 . suskaičiuoti laikinojo kintamojo elemento\r",
+									"// pvz js parašyme\r",
+									"// let masyvas = [1,4,6,7,8,9,10];\r",
+									"// let skaiciuok = 0;\r",
+									"// for (let i=1; i<=masyvas.length; i++){\r",
+									"// skaiciuok++;\r",
+									"// }\r",
+									"// console.log(skaiciuok);\r",
+									"// console.log(masyvas.length)\r",
+									"pm.test('tikrinam kiek komentar6 turi 46 post', function ()\r",
+									"{\r",
+									"    let jsonAtsakymas = pm.response.json();\r",
+									"    pm.expect(jsonAtsakymas).to.have.property('comments');\r",
+									"    let komentarai = jsonAtsakymas.comments;\r",
+									"    let laikinas_kintamasis = [];\r",
+									"    \r",
+									"for (let i=0; i<komentarai.length; i++ ) {\r",
+									"if(komentarai[i].postId == 46){\r",
+									"    laikinas_kintamasis.push(komentarai[i]);\r",
+									"}\r",
+									"\r",
+									"//JS kodas\r",
+									"// let jsonAtsakymas = pm.response.json();\r",
+									"// let komentarai = jsonAtsakymas.comments;\r",
+									"// let laikinas_kintamasis = [];\r",
+									"\r",
+									"// for (let i=0; i<komentarai.length; i++ ) {\r",
+									"// if(komentarai[i].postId == 46){\r",
+									"//     laikinas_kintamasis.push(komentarai[i]);\r",
+									"// }\r",
+									"// }\r",
+									"console.log(komentarai[0].postId);\r",
+									"console.log(laikinas_kintamasis);\r",
+									"console.log(laikinas_kintamasis.length);\r",
+									"\r",
+									"console.log(jsonAtsakymas.comments);\r",
+									"console.log(komentarai.length);\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comments?limit=0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleComment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comments/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LimitAndSkipComments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comments?limit=10&skip=10&select=body,postId",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								},
+								{
+									"key": "select",
+									"value": "body,postId"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllCommentsByPostId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comments/post/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"post",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewComment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"This makes all sense to me!\",\r\n    \"postId\": 3,\r\n    \"userId\": 5\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/comments/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateComment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"I think I should shift to the moon\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/comments/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateComment",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"body\": \"I think I should shift to the moon\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/comments/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteComment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/comments/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							"pm.test(\"Patikrinti komentarų kiekį Post, kurio id = 46\", function () {\r",
+							"    let jsonResponse = pm.response.json(); // Gautas atsakas kaip JSON\r",
+							"    \r",
+							"    // Patikrina, ar 'comments' egzistuoja atsakyme\r",
+							"    pm.expect(jsonResponse).to.have.property('comments');\r",
+							"    \r",
+							"    let commentsForPost46 = jsonResponse.comments.filter(function(comment) {\r",
+							"        return comment.postId === 46;\r",
+							"    });\r",
+							" \r",
+							"    pm.expect(commentsForPost46.length).to.be.above(0); // Patikrina, ar yra bent vienas komentaras\r",
+							"    console.log(\"Komentarų skaičius Post su id = 46: \" + commentsForPost46.length); // Išveda komentarų kiekį į konsolę\r",
+							"});\r",
+							" "
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Todos",
+			"item": [
+				{
+					"name": "GetAllTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/todos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"todos"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleTodo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/todos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"todos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRandomTodo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/todos/random",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"todos",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRandomTodoMax10",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/todos/random/10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"todos",
+								"random",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LimitAndSkipTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/todos?limit=3&skip=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"todos"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllTodosByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/todos/user/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"todos",
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewTodo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"todo\": \"Use DummyJSON in the project\",\r\n    \"completed\": false,\r\n    \"userId\": 5\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/todos/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"todos",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTodo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"completed\": false\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/todos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"todos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditTodo",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"todo\": \"Taisome\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/todos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"todos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteTodo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/todos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"todos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quotes",
+			"item": [
+				{
+					"name": "GetAllQuotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/quotes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"quotes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetSingleQuote",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/quotes/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"quotes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRandomQuote",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/quotes/random",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"quotes",
+								"random"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRandomQuoteMax10",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/quotes/random/10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"quotes",
+								"random",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LimitAndSkipQuotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/quotes?limit=3&skip=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"quotes"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "skip",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"// pm.test(\"Status code is 2xx\", function () {\r",
+					"//     // pm.response.to.have.status(200);\r",
+					"//     pm.expect(pm.response.code).to.be.within(200,203); // nuo 200 iki 203\r",
+					"// });\r",
+					"\r",
+					"// pm.test(\"Content-Type is one of json, webp, jpg, or png\", function () {\r",
+					"//     pm.expect(pm.response.headers.get(\"Content-Type\")).to.match(/(json|webp|jpg|png)/);\r",
+					"// });\r",
+					"\r",
+					"// pm.test(\"JSON neturi 'error' elemento\", function () {\r",
+					"//     let jsonData = pm.response.json();\r",
+					"//     pm.expect(jsonData).to.not.have.property(\"error\");\r",
+					"// });\r",
+					"\r",
+					"// pm.test(\"Save tokens to environment\", function () {\r",
+					"//     const jsonData = pm.response.json();\r",
+					"//     pm.environment.set(\"AccessToken\", jsonData.accessToken);\r",
+					"//     pm.environment.set(\"RefreshToken\", jsonData.refreshToken);\r",
+					"// });\r",
+					"\r",
+					"\r",
+					"\r",
+					"// pm.test(\"AccessToken is not empty\", function () {\r",
+					"//     let jsonData = pm.response.json();\r",
+					"//     pm.expect(jsonData.accessToken).to.not.be.empty;\r",
+					"// });\r",
+					"\r",
+					"// pm.test(\"Kategorijos produktų kiekis > 0\", function () {\r",
+					"//     let jsonData = pm.response.json();\r",
+					"    \r",
+					"//     // pm.expect(jsonData.category).to.be.an('array'); \r",
+					"//     pm.expect(jsonData.products.length).to.be.above(0);  \r",
+					"// });\r",
+					"pm.test(\"Status code is 200\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
+					"});\r",
+					"\r",
+					"//dėstytojo kodas\r",
+					"pm.test(\"Produktų yra\",function() {\r",
+					"    let jsonData = pm.response.json();\r",
+					"    // console.log(jsonData.products.length);\r",
+					"    console.log(jsonData.total);\r",
+					"    pm.expect(jsonData.total).to.be.above(0);\r",
+					"});\r",
+					"\r",
+					"\r",
+					"\r",
+					"\r",
+					"\r",
+					"// pm.test('Produktu kiekis > 0', function() {\r",
+					"//      pm.expect(pm.response.json().products.some(product => product.stock > 0)).to.be.true;\r",
+					"// })\r",
+					"\r",
+					"// pm.test(\"Count comments for postId 46\", function () {\r",
+					"//     const jsonData = pm.response.json();\r",
+					"//     const commentsForPost46 = jsonData.comments.filter(comment => comment.postId === 46);\r",
+					"//     const count = commentsForPost46.length;\r",
+					"//     pm.expect(count).to.be.at.least(0); \r",
+					"//     console.log(`komentarų skaicius postId 46: ${count}`);\r",
+					"// });\r",
+					"\r",
+					"\r",
+					"// // Ai generuotas kodas\r",
+					"// const responseJSON = pm.response.json();\r",
+					"\r",
+					"// // Test the response body structure and values\r",
+					"// pm.test(\"Response body structure is valid\", function () {\r",
+					"//     pm.expect(responseJSON).to.be.an('object').that.has.all.keys('id', 'firstName', 'lastName', 'maidenName', 'age', 'gender', 'email', 'phone', 'username', 'password', 'birthDate', 'image', 'bloodGroup', 'height', 'weight', 'eyeColor', 'hair', 'ip', 'address', 'macAddress', 'university', 'bank', 'company', 'ein', 'ssn', 'userAgent', 'crypto', 'role');\r",
+					"// });\r",
+					"\r",
+					"// // Fixing the TypeError: Cannot read properties of undefined (reading 'filter')\r",
+					"// pm.test(\"Count comments for postId 46\", function () {\r",
+					"//     const postId = 46;\r",
+					"//     const commentsCount = responseJSON.comments.filter(comment => comment.postId === postId).length;\r",
+					"//     pm.expect(commentsCount).to.be.at.least(0);\r",
+					"// });\r",
+					"// // Ai generuoto kodo pabaiga\r",
+					"\r",
+					"// pm.test(\"JSON error?\", function() {\r",
+					"//     pm.response.to.be.json.error(null)\r",
+					"// });- negeras, neveikiantis\r",
+					"\r",
+					"\r",
+					"\r",
+					"// kolegų kodai palyginimui:\r",
+					"\t// pm.test(\\\"Content-Type is one of json, webp, jpg, or png\\\", function () {\r",
+					"\t//     pm.expect(pm.response.headers.get(\\\"Content-Type\\\")).to.match(/(json|webp|jpg|png)/);\r",
+					"\t// });\r",
+					"\r",
+					"\t\r",
+					"\t// pm.test(\"JSON neturi 'error' elemento\", function () {\r",
+					"\t//     let jsonData = pm.response.json();\r",
+					"\t//     pm.expect(jsonData).to.not.have.property(\"error\");\r",
+					"\t// });\r",
+					"\t\r",
+					"\t// pm.test(\\\"Rodyti statuso kodą\\\", function () {\r",
+					"    //     console.log(\\\"Atsakymo statuso kodas:\\\", pm.response.code);\r",
+					"    //     pm.expect(true).to.be.true;\r",
+					"\t// });\r",
+					"\t\r",
+					"\t// pm.test(\\\"Save tokens to environment\\\", function () {\r",
+					"\t//     const jsonData = pm.response.json();\r",
+					"    //     pm.environment.set(\\\"AccessToken\\\", jsonData.token);\r",
+					"\t//     pm.environment.set(\\\"RefreshToken\\\", jsonData.refreshToken);\r",
+					"\t// });\r",
+					"\r",
+					"\r",
+					"\r",
+					"\r",
+					"//    console.log(pm.environment.get(\"accessToken\"));\r",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://dummyjson.com",
+			"type": "string"
+		},
+		{
+			"key": "kolekcijos_kintamasis",
+			"value": "kolekcijos_reiksmes\n",
+			"type": "string"
+		},
+		{
+			"key": "script_kolekcija",
+			"value": ""
+		}
+	]
+}
